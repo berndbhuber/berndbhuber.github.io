@@ -43,7 +43,12 @@
         <div class="jumbotron">
               <form class="form-horizontal" id="inputform" role="form" action="/score-politeness" method="post">
                 <div class="form-group">
-                  <label for="textinput">Enter your email here</label>
+<form>
+<input class="form-control" id="recpname" name="text" rows="1" placeholder="Recipient's name..">
+<input class="form-control" id="yourname" name="text" rows="1" placeholder="Your name..">
+<input class="form-control" id="lastmet" name="text" rows="1" placeholder="when you met the person last time..">
+</form>
+                  <label for="textinput">Enter your message here</label>
                     <textarea class="form-control" id="textinput" name="text" rows="5" placeholder="Enter an email..."></textarea>
                 </div>
 
@@ -57,7 +62,7 @@
                 <div class="well well-kg white-bg">
                     <p id="scored-txt"></p>
                     <br />
-                    <textarea class="form-control" id="textoutput" name="text" rows="5" placeholder="New email..."></textarea>
+                    <textarea class="form-control" id="textoutput" name="text" rows="8" placeholder="New email..."></textarea>
                   <div class="clear"></div>
                 </div>
               </div>
@@ -87,7 +92,9 @@
   <script>
 
 function myFunction() {
-document.getElementById("textoutput").value = "Hi!\nHow are you doing?! I hope you enjoy the summer!!\n"+document.getElementById("textinput").value+"\nI hope you enjoy the rest of the summer!\nThank you so much\nWith best wishes,\n";
+var m = (new Date()).getMonth();
+
+document.getElementById("textoutput").value = "Hi "+document.getElementById("recpname").value+",\nHow are you doing?! It was so nice to meeting you "+document.getElementById("lastmet").value+"!\n"+document.getElementById("textinput").value+"\nI hope you enjoy the rest of the summer!\nThank you so much!\nWith best wishes,\n"+document.getElementById("yourname").value;
 }
 
   </script>
